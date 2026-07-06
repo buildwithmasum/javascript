@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM LEARNING</title>
+    <style>
+        .bgc-black{
+            background-color: rgb(17, 17, 17);
+            color: #fff;
+        }
+    </style>
+    
+    
+
+</head>
+<body class="bgc-black">
+    <div >
+        <h1 id="title" class="heading">Dom learning.....!<span style="display:none">test text</span></h1>
+        <p>Lorem ipsum dolor sit amet. </p>
+   </div>
+    
+</body>
+<script >
+            const title=document.getElementById("title");
+   
+            document.getElementById("title").id;
+            
+
+            document.getElementById('title').className
+
+            document.getElementById("title").getAttribute("id");
+
+            document.getElementById("title").getAttribute("class");
+            document.getElementById("title").setAttribute("class","test heading");
+
+
+
+            title.style.backgroundColor="red";
+            title.style.border="20px solid black";
+
+            title.style.border="5px solid purple";
+
+            title.style.borderRadius="10px";
+            title.style.cssText = `
+                    color: yellow;
+                    background-color: red;
+                   border: 5px solid purple;
+                    border-radius: 10px;
+                `;
+              
+
+    </script>
+</html>
+
+<!--  CONSOLE
+
+document.getElementById("title");
+   <h1 id=​"title" class=​"test heading">​Dom learning.....!​</h1>​
+document.getElementById("title").id;
+   'title'
+
+document.getElementById('title').className
+'heading'
+document.getElementById("title").getAttribute("id");
+'title'
+document.getElementById("title").getAttribute("class");
+'heading'
+document.getElementById("title").setAttribute("class","test heading");
+undefined =>it overwrites claa name to test heading
+
+
+=> style 
+title.style.backgroundColor="red";
+'red'
+title.style.border="20px solid black";
+'20px solid black'
+title.style.border="2px solid purple";
+'2px solid purple'
+title.style.borderRadius="10px";
+'10px'
+
+
+title.innerHTML
+'Dom learning.....!<span style="display:none">test text</span>'
+title.innerText
+'Dom learning.....!'
+title.textContent
+'Dom learning.....!test text'
+-->
