@@ -17,7 +17,16 @@
 <body class="bgc-black">
     <div >
         <h1 id="title" class="heading">Dom learning.....!<span style="display:none">test text</span></h1>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
         <p>Lorem ipsum dolor sit amet. </p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">five </li>
+        </ul>
    </div>
     
 </body>
@@ -87,4 +96,69 @@ title.innerText
 'Dom learning.....!'
 title.textContent
 'Dom learning.....!test text'
+
+
+document.querySelector("h2")
+<h2>​Lorem ipsum dolor sit amet.​</h2>​
+document.querySelector("title")
+<title>​DOM LEARNING​</title>​
+document.querySelector("#title")
+<h1 id=​"title" class=​"test heading" style=​"color:​ yellow;​ background-color:​ red;​ border:​ 5px solid purple;​ border-radius:​ 10px;​">​…​</h1>​
+document.querySelector(".heading")
+<h1 id=​"title" class=​"test heading" style=​"color:​ yellow;​ background-color:​ red;​ border:​ 5px solid purple;​ border-radius:​ 10px;​">​…​</h1>​
+document.querySelector("input[type="password"]")
+VM4306:1 Uncaught SyntaxError: missing ) after argument list
+document.querySelector('input[type="password"]')
+<input type=​"password" name id>​
+
+
+document.querySelector("ul")
+<ul>​…​</ul>​
+const myul=document.querySelector("ul")
+undefined
+myul.querySelector("li")
+<li style=​"background-color:​ blue;​ padding:​ 5px;​">​…​</li>​
+const newli=myul.querySelector("li")
+undefined
+newli.style.backgroundColor="yellow"
+'yellow'
+newli.style.backgroundColor="blue"
+'blue'
+newli.style.padding=5px
+VM616:1 Uncaught SyntaxError: Invalid or unexpected token
+newli.style.padding="5px"
+'5px'
+newli.innerText
+'one'
+newli.innerText="four"
+'four
+
+
+
+
+templist=document.querySelectorAll("li")
+NodeList(3) [li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeListentries: ƒ entries()forEach: ƒ forEach()item: ƒ item()keys: ƒ keys()length: (...)values: ƒ values()constructor: ƒ NodeList()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "NodeList"get length: ƒ length()[[Prototype]]: Object
+templist
+NodeList(3) [li, li, li]
+templist[1].style.color="red"
+'red'
+templist.forEach((l)=>l.style.color="red"
+VM1498:1 Uncaught SyntaxError: missing ) after argument list
+templist.forEach((l)=>l.style.color="red")
+undefined
+
+const templist=document.getElementsByClassName("list-item")
+undefined
+templist
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+const converttoarray=Array.from(templist)
+undefined
+converttoarray
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+converttoarray.forEach((n)=>n.style.backgroungcolor="blue")
+undefined
+converttoarray.forEach((n)=>n.style.backgroundColor="blue")
+undefined
+
+
 -->
