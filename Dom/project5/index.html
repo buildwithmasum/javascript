@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Escape The Death God</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Horror Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="overlay" style="height: 550px;">
+
+    <div class="game">
+
+        <h1>☠ Escape The Death God ☠</h1>
+
+        <p class="story">
+            The Death God has trapped your soul.
+            Guess the hidden number before he reaches you...
+        </p>
+
+        <div class="imageBox">
+
+            <img
+                src="images/deathgod.png"
+                id="deathGod"
+                alt="Death God">
+
+        </div>
+
+        <div class="lives">
+
+            ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️
+
+        </div>
+
+        <div class="status">
+
+            <h3>Previous Guesses</h3>
+
+            <p class="guesses"></p>
+
+            <h3>Hint</h3>
+
+            <p class="lowOrHigh">
+                Make your first guess...
+            </p>
+
+        </div>
+
+        <form>
+
+            <input
+                type="number"
+                id="guessField"
+                placeholder="Enter Number">
+
+            <button id="submit">
+                Guess
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<audio id="bgMusic" loop>
+    <source src="sounds/bg.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="heartbeat">
+    <source src="sounds/heartbeat.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="evilLaugh">
+    <source src="sounds/evilLaugh.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="winSound">
+    <source src="sounds/win.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
