@@ -22,7 +22,7 @@
     //     alert('tree')
     // }
      //type,timestamp,defaultPrevented
-    //target,toElementt,srcElement,currTarger
+    //target,toElementt,srcElement,currTarget
     //clienX,clientY,ScreenX,screenY
     //altkay,ctrlkkey,shiftkey,keycode
 //     document.getElementById("images").addEventListener("click",function(e){
@@ -50,5 +50,115 @@
         }
       
     })
+
+
+    document.getElementById("tree").addEventListener("click", function(e){
+
+    // ---- PROPERTY 1: e.type ----
+    // Tells you WHICH event occurred (as a string)
+    console.log(e.type);   
+    // Output: "click"
+    // Use: Helpful when one function handles multiple event types 
+    // (e.g., same handler for both "click" and "mouseover")
+
+
+    // ---- PROPERTY 2: e.timeStamp ----
+    // Tells you WHEN the event happened
+    // (milliseconds since the page loaded)
+    console.log(e.timeStamp);   
+    // Output: e.g., 3542.5
+    // Use: Detecting double-clicks, measuring time between events, 
+    // performance tracking
+
+
+    // ---- PROPERTY 3: e.defaultPrevented ----
+    // Tells you IF preventDefault() was already called (true/false)
+    console.log(e.defaultPrevented);   
+    // Output: false (before calling preventDefault)
+
+    e.preventDefault();
+
+    console.log(e.defaultPrevented);   
+    // Output: true (after calling preventDefault)
+    // Use: Checking if an earlier listener already cancelled 
+    // the default action, to avoid running conflicting logic
+
+}, false);
+
+document.getElementById("images").addEventListener("click", function(e){
+
+    // ---- PROPERTY: e.target ----
+    // The EXACT element that was actually clicked (deepest element)
+    console.log(e.target);   
+    // If you click on the "tree" image, this prints the <img id="tree"> element,
+    // even though the listener is on the parent <ul id="images">
+
+
+    // ---- PROPERTY: e.currentTarget ----
+    // The element the LISTENER is attached to (not necessarily what was clicked)
+    console.log(e.currentTarget);   
+    // Always prints <ul id="images"> here, because that's where 
+    // addEventListener was called — no matter which child was clicked
+
+
+    // ---- PROPERTY: e.srcElement (OLD / non-standard) ----
+    // Same as e.target, but this was Internet Explorer's old way of doing it
+    console.log(e.srcElement);   
+    // Modern browsers support it too (for backward compatibility), 
+    // but you should NOT use this in new code — use e.target instead
+
+
+    // ---- PROPERTY: e.toElement (OLD / non-standard, mouseover-specific) ----
+    // Used only in old IE mouse events — tells element mouse moved INTO
+    // Deprecated — modern code uses e.relatedTarget instead
+    console.log(e.toElement);   
+
+}, false);
+document.getElementById("images").addEventListener("click", function(e){
+
+    // ---- PROPERTY: e.clientX / e.clientY ----
+    // Mouse position relative to the BROWSER WINDOW (viewport)
+    // (0,0) starts from top-left corner of the visible browser area
+    console.log(e.clientX, e.clientY);
+    // Changes if you scroll the page — always relative to what's VISIBLE
+
+
+    // ---- PROPERTY: e.screenX / e.screenY ----
+    // Mouse position relative to the ENTIRE COMPUTER SCREEN
+    // (0,0) starts from top-left corner of your monitor
+    console.log(e.screenX, e.screenY);
+    // Includes browser's position on screen, taskbar, etc.
+
+}, false);
+
+
+document.addEventListener("keydown", function(e){
+
+    // ---- PROPERTY: e.altKey ----
+    // true/false — tells if the ALT key was held down during the event
+    console.log(e.altKey);   
+    // true if user pressed Alt+something
+
+
+    // ---- PROPERTY: e.ctrlKey ----
+    // true/false — tells if the CTRL key was held down during the event
+    console.log(e.ctrlKey);   
+    // true if user pressed Ctrl+something
+
+
+    // ---- PROPERTY: e.shiftKey ----
+    // true/false — tells if the SHIFT key was held down during the event
+    console.log(e.shiftKey);   
+    // true if user pressed Shift+something
+
+
+    // ---- PROPERTY: e.keyCode (OLD / deprecated) ----
+    // A NUMBER representing which key was pressed
+    console.log(e.keyCode);   
+    // e.g., 65 for "A" key, 13 for Enter
+    // ⚠️ Deprecated — use e.key or e.code instead in modern code
+    //if u use e.key or e.keycode it will give you the name of a key that was held down during  the event;
+
+}, false);
 </script>
 </html>
