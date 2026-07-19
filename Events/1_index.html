@@ -8,13 +8,47 @@
 <body style="background-color: #414141;color: aliceblue;">
     <h2>Images</h2>
     <div>
-        <ul>
-            <li> <img width="200px" id="mountain"src="https://static.vecteezy.com/system/resources/thumbnails/025/287/278/small/beautiful-landscape-in-the-mountains-nature-background-ai-generated-photo.jpg" alt=""> </li>
-            <li><img width="200px" id="river" src="https://static.vecteezy.com/system/resources/thumbnails/051/587/102/small/lonely-old-oak-in-the-field-during-a-spectacular-sunset-rural-scenery-beautiful-natural-landscape-scenic-travel-background-video.jpg" alt=""> </li>
+        <ul id="images">
+            <li> <img width="200px" id="mountain"src="https://static.vecteezy.com/system/resources/thumbnails/025/287/278/small/beautiful-landscape-in-the-mountains-nature-background-ai-generated-photo.jpg" alt="photoshop"> </li>
+            <li><img width="200px" id="tree" src="https://static.vecteezy.com/system/resources/thumbnails/051/587/102/small/lonely-old-oak-in-the-field-during-a-spectacular-sunset-rural-scenery-beautiful-natural-landscape-scenic-travel-background-video.jpg" alt=""> </li>
             <li><img width="200px" id="lion"src="https://static.vecteezy.com/system/resources/thumbnails/015/200/446/small/untouched-nature-majestic-carpathian-mountains-beautiful-landscape-breathtaking-view-photo.jpg" alt=""> </li>
             <li><img width="200px"id="prayer" src="https://static.vecteezy.com/system/resources/thumbnails/005/246/391/small/landscape-nature-background-of-beautiful-cosmos-flower-field-free-photo.jpg" alt=""> </li>
-            <li><a style="color: aliceblue;"href="https://www.google.com/" id=""google>Google</a> </li>
+            <li><a style="color: aliceblue;"href="https://www.google.com/" id="google">Google</a> </li>
         </ul>
     </div>
 </body>
+<script>
+    // document.getElementById('tree').onclick=function(){
+    //     alert('tree')
+    // }
+     //type,timestamp,defaultPrevented
+    //target,toElementt,srcElement,currTarger
+    //clienX,clientY,ScreenX,screenY
+    //altkay,ctrlkkey,shiftkey,keycode
+//     document.getElementById("images").addEventListener("click",function(e){
+//         console.log("url clicked");
+//     },false)
+//     document.getElementById("tree").addEventListener("click",function(e){
+//         console.log("tree");
+//         e.stopPropagation()
+//     },false)
+//     /*
+//     "JavaScript events travel in two phases — capturing (top to target) and bubbling (target back to top).
+//      By default, addEventListener's third parameter is false, meaning listeners fire during the bubbling phase. 
+//      If we set it to true, the listener fires during the capturing phase instead. event.stopPropagation() stops the event from continuing to bubble (or capture) further — so parent element listeners won't get triggered."
+//     */ 
+//    document.getElementById("google").addEventListener("click",function(e){
+//         e.preventDefault();
+//         e.stopPropagation();
+//         console.log("google clicked")
+//    })
+   
+    document.querySelector("#images").addEventListener("click",function(e){
+        console.log(e.target.parentNode);
+        if(e.target.tagName=="IMG"){
+              e.target.parentNode.remove()
+        }
+      
+    })
+</script>
 </html>
